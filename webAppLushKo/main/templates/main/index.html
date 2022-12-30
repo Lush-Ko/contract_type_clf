@@ -1,0 +1,19 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+
+{% block title_content %}
+    {{ title }}
+{% endblock %}
+
+{% block body_content %}
+    <div class="features">
+        <h1>{{ title }}</h1>
+        <p>Здесь ты прочитаешь про то, как работает наша программа, после чего тыкни в лося, чтобы загрузить свой документ или тыкни в ежика, чтобы посмотреть уже загруженные документы</p>
+        <a href="{% url 'predicter_home' %}" class="btn btn-success">
+            <img src="{% static 'main/image/losyash.png' %}" height="100"> <span class="logo">Наколдую вам предикт</span>
+        </a>
+        <a href="{% url 'all_doc' %}" class="btn btn-success">
+            <img src="{% static 'main/image/ежик.png' %}" height="100"> <span class="logo">Покажу все документы</span>
+        </a>
+    </div>
+{% endblock %}

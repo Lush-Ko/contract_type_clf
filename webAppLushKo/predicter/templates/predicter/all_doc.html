@@ -1,0 +1,23 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+
+{% block title_content %}
+    Все документы
+{% endblock %}
+
+{% block body_content %}
+    <div class="features">
+        <h1>Все документы</h1>
+        {% if documents %}
+            {% for el in documents %}
+                <div class="alert alert-success">
+                    <h3> {{el.title}}</h3>
+                    <p>Мы 97% уверены, что это {{ el.prediction }} класс</p>
+                    <a href="{% url 'result-answer-pdf' el.id_uniq %}" class="btn btn-info"><img src="{% static 'main/image/losyash2.png' %}" width="52"><span class="logo">Хочешь подробностей?</span></a>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>У вас нет записей</p>
+        {% endif %}
+    </div>
+{% endblock %}
