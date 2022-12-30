@@ -1,0 +1,24 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+
+{% block title_content %}
+    Predicter result
+{% endblock %}
+
+{% block body_content %}
+    <div class="details">
+        <h3>Вот что мы можем сказать о вашем документе:</h3>
+        <h1>"{{ document.title }}"</h1>
+
+        <a href="{% url 'result-answer-pdf' document.id_uniq %}" class="btn btn-success" >
+            <img src="{% static 'main/image/losyash.png' %}" height="100"> <span class="logo">пдф версия с анализом</span>
+        </a>
+        <a href="{% url 'result-answer-html' document.id_uniq %}" class="btn btn-success">
+            <img src="{% static 'main/image/ежик.png' %}" height="100"> <span class="logo">хтмл версия с анализом</span>
+        </a>
+        <a href="{% url 'result-answer-origin' document.id_uniq %}" class="btn btn-success">
+            <img src="{% static 'main/image/ежик.png' %}" height="100"> <span class="logo">жалкий оригинал</span>
+        </a>
+        <p>html</p>
+    </div>
+{% endblock %}
