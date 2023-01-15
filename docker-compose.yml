@@ -10,9 +10,3 @@ services:
       - .:/home/jovyan/
     environment:
       - DOCKER_STACKS_JUPYTER_CMD=notebook
-  requirements:
-    image: jupyter/datascience-notebook
-    volumes:
-      - .:/home/jovyan/
-    working_dir: /jovyan
-    command: pip install -r requirements.txt
