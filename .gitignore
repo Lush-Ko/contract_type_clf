@@ -1,3 +1,8 @@
-
-dev/.ipynb_checkpoints/cuad_classic_models-checkpoint.ipynb
+dev/.ipynb_checkpoints/
 *.csv
+/.local
+/.jupyter
+/.ipython
+/.cache
+/.vscode-server
+/.gitconfig
